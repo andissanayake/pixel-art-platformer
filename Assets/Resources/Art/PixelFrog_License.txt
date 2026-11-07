@@ -1,0 +1,11 @@
+Pixel Adventure by Pixel Frog
+https://pixelfrog-assets.itch.io/pixel-adventure-1
+
+License: Creative Commons Zero (CC0) 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+
+You can distribute, remix, adapt, and build upon this art in any medium or format,
+including commercial projects. Attribution is not required.
+
+Sprites used here: Ninja Frog (player), Pink Man (enemy), the green terrain,
+wooden platforms, the apple, and the checkpoint flag.

@@ -9,6 +9,7 @@ Island Adventure is a 2D pixel-art action platformer set in Sri Lankan towns. Th
 | Who is the player, and what are the six worlds? | [readme.md](readme.md) |
 | How do the scripts fit together? | [docs/README.md](docs/README.md) |
 | What is already playable, and where are the art and sound credits? | [docs/prototype.md](docs/prototype.md) |
+| What do we build next, and in what order? | [docs/roadmap.md](docs/roadmap.md) |
 
 The code articles, in order: [parts](docs/parts.md), [data](docs/data.md), [messages](docs/messages.md), [a round](docs/a-round.md).
 

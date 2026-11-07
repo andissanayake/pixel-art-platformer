@@ -1,0 +1,32 @@
+---
+description: SpriteLab credit caution — save every generated sprite before anything else
+alwaysApply: true
+---
+
+# SpriteLab
+
+`user-spritelab` spends real credits. Balance is low. Treat every paid call as something we cannot afford to throw away.
+
+## 1. Save every sprite first
+
+This is the first rule. It outranks taste, retries, and whether the sprite will be used.
+
+The moment a paid tool returns pixels, write **every** image to disk before judging it, editing it, regenerating, or moving on. That includes rejects, extra variants, pack cells, rotation frames, sheets, and GIFs. A sprite we will not ship is still saved.
+
+- Folder: `Assets/Art/SpriteLab/YYYY-MM-DD/`
+- Name: `<tool>-<sprite-id-or-slug>.png` (and `.gif` when a job returns one)
+- `download_url`: download it with the same Authorization header the SpriteLab server uses
+- Inline only (`edit_sprite` and any base64 result): decode and write the PNG. Those calls do not keep a download URL
+- Append one line to `Assets/Art/SpriteLab/index.md`: date, tool, credits charged, id, filename, prompt
+- Leave the file in that folder. Copying a keeper into `Assets/Resources/Art/` does not replace the archive copy
+- If the save fails, stop. Do not spend again until the file is on disk
+
+## Spend slowly
+
+Call `get_credits` (free) before a paid tool. Default `quality` is `epic`. Do not use `mythic`, animation Pro, a tileset, or a UI kit unless the user asks for that thing by name.
+
+Ask before any call that costs more than 1 credit, or when the balance would drop under 10. One paid call at a time. Do not retry a miss until the first result is saved and the user asks for another.
+
+Cheap path, in order: `resize_sprite` is free (new size of a sprite we already have). `generate_sprite` is 1 credit. Four or more related items go in one `generate_sprite_pack`, not one call each. `get_credits`, `list_palettes`, `check_animation_job`, and `check_ui_kit` are free.
+
+The local `user-sprite-gen` tool spends nothing. Use it for a throwaway draft. Use SpriteLab when we want a keeper, then save it under rule 1.

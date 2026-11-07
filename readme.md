@@ -527,6 +527,7 @@ The playable build today is one character, one level, walk / run / jump, coins, 
 | [Agent guide](AGENTS.md) | How to change the design and the code without mixing them up |
 | [How the code is put together](docs/README.md) | Parts, data, messages, and one round of play |
 | [Prototype build log](docs/prototype.md) | What each engineering phase added, plus art, sound and controls |
+| [Roadmap](docs/roadmap.md) | The build order from today's prototype to all six towns |
 
 **Technology**
 

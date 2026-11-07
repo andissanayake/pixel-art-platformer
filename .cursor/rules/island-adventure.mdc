@@ -1,0 +1,31 @@
+---
+description: Island Adventure identity, where the docs live, and how gameplay is built in code
+alwaysApply: true
+---
+
+# Island Adventure
+
+The game is **Island Adventure** (Sri Lankan towns, boy and girl, six worlds, eighteen levels). The C# namespace, the Unity menu (`Tools/Pixel Adventure`), and the placeholder Pixel Frog art pack stay **Pixel Adventure** until a rename is asked for.
+
+Read [AGENTS.md](../../AGENTS.md) before structural work.
+
+| Kind of change | Edit |
+| --- | --- |
+| What the player sees, does, unlocks | `readme.md` |
+| How a script fits with the others | `docs/` articles |
+| What a phase added, art, sound, controls | `docs/prototype.md` |
+
+Weekly design plans stay on the player experience. Leave programming, Unity setup, and architecture out of those plans.
+
+## Gameplay code
+
+Scripts create the game. The `Main` scene stays empty. Everything spawned at runtime goes under `[Generated]`.
+
+- A new piece of the world is an `ILevelPart` in `Assets/Scripts/Level/Parts/`. Session parts survive a restart. Level parts are replaced. Add the part to the matching list in `LevelBuilder`.
+- `Create` puts every object under the parent it is given. The builder destroys that parent on clear.
+- One level's positions live in `LevelLayout`. Values shared by every level live in `LevelSettings`.
+- Coins, enemies, the player, the HUD, and audio talk through `GameEvents`. They do not hold references to each other.
+- Sprites and clips load from `Resources` by name (`GameArt`, `GameAudio`) at 16 pixels per unit.
+- New assets include their `.meta` files. Import settings stay in `PixelArtImporter` and `SoundImporter`.
+
+Check the result with **Tools → Pixel Adventure → Level Builder Window → Rebuild All**, then Play.

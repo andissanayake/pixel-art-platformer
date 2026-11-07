@@ -1,6 +1,8 @@
 # How the code is put together
 
-Pixel Adventure is built in C#. Scripts create the player, the level, the camera, and the HUD. The `Main` scene stays empty.
+Island Adventure is built in C#. Scripts create the player, the level, the camera, and the HUD. The `Main` scene stays empty.
+
+The player-facing design — characters, towns, weapons, bosses and the weekly plan — is in the [game design README](../readme.md). These articles describe the prototype as it runs today. The [prototype build log](prototype.md) is the phase-by-phase record of how that prototype was built, including art, sound and controls.
 
 These articles each explain one idea. Read them in order the first time. After that, open only the one you need.
 
